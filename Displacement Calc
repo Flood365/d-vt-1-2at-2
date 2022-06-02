@@ -1,0 +1,29 @@
+# d=vt+1/2at^2
+import math
+var = str(input("What variable are you missing( D, V, T, A )?").lower())
+if var == "d":
+    vVar = float(input("What is the starting Velocity(im m/s^2)?"))
+    tVar = float(input("What is the time?(in Seconds)"))
+    aVar = float(input("What is the acceleration per second?(in m/s^2)"))
+    var = (vVar * tVar) + ((aVar * tVar ** 2) / 2)
+    print("The distance is " + "{:.3f}".format(var) + "meters")
+if var == "v":
+    dVar = float(input("What was the distance traveled?"))
+    tVar = float(input("What is the time?(in Seconds)"))
+    aVar = float(input("What is the acceleration per second?(in m/s^2)"))
+    var = (dVar / tVar) - ((aVar * tVar) / 2)
+    print("The velocity is " + "{:.3f}".format(var) + "meters per second squared")
+if var == "t":
+    dVar = float(input("What was the distance traveled?"))
+    vVar = float(input("What is the starting Velocity(im m/s^2)?"))
+    aVar = float(input("What is the acceleration per second?(in m/s^2)"))
+    var = (vVar - math.sqrt(vVar ** 2 + 2 * (aVar * dVar))) / aVar
+    var1 = (vVar + math.sqrt(vVar ** 2 + 2 * (aVar * dVar))) / aVar
+    print("The time passed is " + "{:.3f}".format(var * -1) + " seconds")
+    print("OR the time passed is " + "{:.3f}".format(var1 * -1) + " seconds(i know its negative)")
+if var == "a":
+    dVar = float(input("What was the distance traveled?"))
+    vVar = float(input("What is the starting Velocity(im m/s^2)?"))
+    tVar = float(input("What is the time?(in Seconds)"))
+    var = ((2 * tVar) / (tVar ** 2)) - ((2 * vVar) / tVar)
+    print("The acceleration is " + "{:.3f}".format(var) + "meters per second squared")
